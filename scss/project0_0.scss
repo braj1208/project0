@@ -1,0 +1,85 @@
+$color_background: #c6f2f5;
+$color_border: #5be3cb;
+
+%text_containers {
+	padding-bottom: 10px;
+	padding-top: 15px;
+	border: 1px solid $color_border;
+}
+
+%table {
+	padding: 5px;
+	border: 1px solid black;
+}
+
+div.col-9 {
+	h2, ul {
+		font-weight: bold;
+	}
+}
+
+#id1, #id2 {
+	font-weight: bold;
+	color: #32858c;
+}
+
+.col-3, .col-9 {
+	@extend %text_containers;
+	text-align: justify;
+}
+
+h1 {
+	@extend %text_containers;
+	text-align: center;
+	background-color: $color_background;
+	margin-bottom:0;
+	margin-top:0;				
+}
+
+a.btn {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.btn:hover {
+	background-color: $color_background;
+	color: black;
+}
+
+th, td {
+	@extend %table;
+}
+
+th {
+	@extend %table;
+	text-align: center;
+}
+
+div p {
+	font-size: 16px;
+}
+
+p::selection {
+	background-color: $color_background;
+	color: black;
+}
+
+@media (min-width: 500px) {
+	div.col-3 {
+		ul[id] {
+			a::after {
+				content: ",India";
+			}
+		}
+	}
+}
+
+@media (max-width: 499px) {
+	div.col-3 {
+		ul[id] {
+			a::after {
+				content: "";
+			}
+		}
+	}
+}
